@@ -12,9 +12,10 @@ const router = express.Router();
 router.post("/user/register", createUser);
 router.post("/user/login", login);
 
-router.post("/student/add", authentication, createStudent);
-router.get("/student/view", authentication, viewStudent);
+router.post("/student", authentication, createStudent);
+router.get("/student", authentication, viewStudent);
 router.put("/student/update/:studentId", authentication, authorization, updateStudentDetails);
+// router.put("/student/update/", authentication, authorization, editStudents);
 router.delete("/student/delete/:studentId", authentication, authorization, deleteStudent);
 
 module.exports = router;

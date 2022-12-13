@@ -6,15 +6,11 @@ const mongoose = require("mongoose");
 app.use(express.json());
 
 mongoose.set('strictQuery', true);
-mongoose
-  .connect(
-    "mongodb+srv://Sushant_Bhaiswar_30:WBYUu1bCYmxmZUmg@cluster0.jui41on.mongodb.net/Student-list?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-    }
-  )
-  .then((data) => console.log("MongoDB is connected" + data.connection.host))
-  .catch((err) => console.log(err));
+mongoose.connect("mongodb+srv://Deepak1234:TrU8MdmpPJ72rGI3@cluster0.l1wlrcl.mongodb.net/test",{
+    useNewUrlParser: true
+})
+.then( () => console.log("MongoDb is connected"))
+.catch ( err => console.log(err) )
 
 app.use("/", route);
 

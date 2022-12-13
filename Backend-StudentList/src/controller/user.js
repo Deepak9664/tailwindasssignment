@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 module.exports = {
   createUser: async (req, res) => {
     try {
-      let { email } = req.body;
+      let { email ,password,name} = req.body;
       let uniqEmail = await userModel.findOne({email});
       if (uniqEmail)
         return res
